@@ -91,7 +91,15 @@
         import { getFirestore, collection, onSnapshot, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- CONFIGURATIE ---
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const firebaseConfig = {
+		  apiKey: "AIzaSyBUDyOdsWCargjNTIvwjlvGEMmluPVaD2k",
+		  authDomain: "haarsite-1d45a.firebaseapp.com",
+		  projectId: "haarsite-1d45a",
+		  storageBucket: "haarsite-1d45a.firebasestorage.app",
+		  messagingSenderId: "277061579204",
+		  appId: "1:277061579204:web:f2675e3d28d92a6fc77491",
+		  measurementId: "G-EBQZWZPZHW"
+		};
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'style-wiki-default';
         const VOTING_THRESHOLD = 5;
 
