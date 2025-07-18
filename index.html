@@ -3,50 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style Wiki</title>
+    <title>Gent's Style Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif;
+            background-color: #FFFFFF; /* Wit */
+            color: #111827; /* gray-900 */
         }
-        .sidebar-btn.active {
-            background-color: #2563eb; /* blue-600 */
-            color: white;
-            font-weight: 600;
+        h1, h2, h3, .nav-btn {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
         }
         .nav-btn.active {
-            background-color: #1d4ed8; /* blue-700 */
-            color: white;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            background-color: #FFFFFF; /* Wit */
+            color: #000000; /* Zwart */
+        }
+        .sidebar-btn.active {
+            background-color: #111827; /* gray-900 */
+            color: #FFFFFF;
+            font-weight: 700;
         }
         .fire-icon {
             display: none;
-            color: #f59e0b; /* amber-500 */
+            color: #F59E0B; /* amber-500 */
         }
         .fire-icon.visible {
             display: inline-block;
         }
+        .vote-btn {
+            background-color: #111827; /* gray-900 */
+            color: white;
+        }
+        .vote-btn:hover {
+            background-color: #374151; /* gray-700 */
+        }
         .vote-btn:disabled {
-            background-color: #9ca3af;
+            background-color: #D1D5DB; /* gray-300 */
+            color: #6B7280; /* gray-500 */
             cursor: not-allowed;
         }
-        /* Stijl voor AI suggestie */
         .ai-suggestion {
-            color: #2563eb; /* blue-600 */
+            color: #1D4ED8; /* blue-700 */
             font-weight: 600;
             cursor: pointer;
             text-decoration: underline;
-            text-decoration-color: #93c5fd; /* blue-300 */
         }
-        .ai-suggestion:hover {
-            color: #1d4ed8; /* blue-700 */
-            text-decoration-color: #1d4ed8;
-        }
-        /* Stijl voor de AI-lader */
         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
+            border: 4px solid #E5E7EB; /* gray-200 */
+            border-top: 4px solid #111827; /* gray-900 */
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -59,18 +67,18 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-gray-800">
 
     <!-- Navigatiebalk -->
-    <nav class="bg-blue-600 shadow-md sticky top-0 z-20">
+    <nav class="bg-black shadow-lg sticky top-0 z-20">
         <div class="max-w-7xl mx-auto px-2 sm:px-4">
             <div class="flex items-center justify-center h-16">
-                <div class="flex items-center space-x-1 sm:space-x-2 bg-blue-800 p-1 rounded-lg flex-wrap justify-center">
-                    <button id="nav-hair" class="nav-btn text-white font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Herenkapsels</button>
-                    <button id="nav-beard" class="nav-btn text-blue-200 hover:text-white font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Baardstijlen</button>
-                    <button id="nav-hair-products" class="nav-btn text-blue-200 hover:text-white font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Haarproducten</button>
-                    <button id="nav-beard-products" class="nav-btn text-blue-200 hover:text-white font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Baardproducten</button>
-                    <button id="nav-chooser" class="nav-btn text-blue-200 hover:text-white font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Stijlkiezer</button>
+                <div class="flex items-center space-x-1 sm:space-x-2 bg-gray-800 p-1 rounded-md flex-wrap justify-center">
+                    <button id="nav-chooser" class="nav-btn text-gray-300 hover:bg-gray-700 font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Stijlkiezer</button>
+                    <button id="nav-hair" class="nav-btn text-gray-300 hover:bg-gray-700 font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Herenkapsels</button>
+                    <button id="nav-beard" class="nav-btn text-gray-300 hover:bg-gray-700 font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Baardstijlen</button>
+                    <button id="nav-hair-products" class="nav-btn text-gray-300 hover:bg-gray-700 font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Haarproducten</button>
+                    <button id="nav-beard-products" class="nav-btn text-gray-300 hover:bg-gray-700 font-semibold py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 text-sm sm:text-base">Baardproducten</button>
                 </div>
             </div>
         </div>
@@ -78,10 +86,10 @@
 
     <div class="flex flex-col md:flex-row min-h-[calc(100vh-4rem)]">
         <!-- Sidebar -->
-        <aside id="sidebar" class="w-full md:w-80 bg-white shadow-lg p-4 md:p-6 space-y-4 transition-all duration-300 md:sticky md:top-16 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto"></aside>
+        <aside id="sidebar" class="w-full md:w-80 bg-white border-r border-gray-200 p-4 md:p-6 space-y-4 transition-all duration-300 md:sticky md:top-16 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto"></aside>
 
         <!-- Main Content -->
-        <main id="main-content" class="flex-1 p-6 md:p-10"></main>
+        <main id="main-content" class="flex-1 p-6 md:p-10 bg-gray-50"></main>
     </div>
 
     <!-- Firebase SDK's -->
@@ -92,115 +100,115 @@
 
         // --- CONFIGURATIE ---
         const firebaseConfig = {
-		  apiKey: "AIzaSyBUDyOdsWCargjNTIvwjlvGEMmluPVaD2k",
-		  authDomain: "haarsite-1d45a.firebaseapp.com",
-		  projectId: "haarsite-1d45a",
-		  storageBucket: "haarsite-1d45a.firebasestorage.app",
-		  messagingSenderId: "277061579204",
-		  appId: "1:277061579204:web:f2675e3d28d92a6fc77491",
-		  measurementId: "G-EBQZWZPZHW"
-		};
-
+          apiKey: "AIzaSyBUDyOdsWCargjNTIvwjlvGEMmluPVaD2k",
+          authDomain: "haarsite-1d45a.firebaseapp.com",
+          projectId: "haarsite-1d45a",
+          storageBucket: "haarsite-1d45a.appspot.com",
+          messagingSenderId: "277061579204",
+          appId: "1:277061579204:web:f2675e3d28d92a6fc77491",
+          measurementId: "G-EBQZWZPZHW"
+        };
+        const apiKey = ""; // Vul hier je Gemini API key in
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'style-wiki-default';
         const VOTING_THRESHOLD = 5;
 
-        // --- DATA ---
+        // --- DATA (VOLLEDIGE LIJST HERSTELD) ---
         const data = {
             hairstyles: [
                 // Zeer kort / geschoren
-                { id: 'bald', type: 'hair', name: 'Bald (volledig kaal)', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=Bald', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'buzz-cut', type: 'hair', name: 'Buzz Cut', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=Buzz+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'butch-cut', type: 'hair', name: 'Butch Cut', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=Butch+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'crew-cut', type: 'hair', name: 'Crew Cut', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=Crew+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'high-and-tight', type: 'hair', name: 'High and Tight', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=High+and+Tight', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'induction-cut', type: 'hair', name: 'Induction Cut', category: 'Zeer kort / geschoren', image: 'https://placehold.co/200x150/cccccc/333333?text=Induction+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'bald', type: 'hair', name: 'Bald (volledig kaal)', category: 'Zeer kort / geschoren', image: 'images/bald.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'buzz-cut', type: 'hair', name: 'Buzz Cut', category: 'Zeer kort / geschoren', image: 'images/buzz-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'butch-cut', type: 'hair', name: 'Butch Cut', category: 'Zeer kort / geschoren', image: 'images/butch-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'crew-cut', type: 'hair', name: 'Crew Cut', category: 'Zeer kort / geschoren', image: 'images/crew-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'high-and-tight', type: 'hair', name: 'High and Tight', category: 'Zeer kort / geschoren', image: 'images/high-and-tight.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'induction-cut', type: 'hair', name: 'Induction Cut', category: 'Zeer kort / geschoren', image: 'images/induction-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Kort (tot ca. 3 cm)
-                { id: 'caesar-cut', type: 'hair', name: 'Caesar Cut', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Caesar+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'comb-over', type: 'hair', name: 'Comb Over', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Comb+Over', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'french-crop', type: 'hair', name: 'French Crop', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=French+Crop', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'ivy-league', type: 'hair', name: 'Ivy League', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Ivy+League', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'military-cut', type: 'hair', name: 'Military Cut', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Military+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'short-textured-crop', type: 'hair', name: 'Short Textured Crop', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Textured+Crop', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'textured-fringe', type: 'hair', name: 'Textured Fringe', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Textured+Fringe', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'taper-cut', type: 'hair', name: 'Taper Cut', category: 'Kort (tot ca. 3 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Taper+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'caesar-cut', type: 'hair', name: 'Caesar Cut', category: 'Kort (tot ca. 3 cm)', image: 'images/caesar-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'comb-over', type: 'hair', name: 'Comb Over', category: 'Kort (tot ca. 3 cm)', image: 'images/comb-over.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'french-crop', type: 'hair', name: 'French Crop', category: 'Kort (tot ca. 3 cm)', image: 'images/french-crop.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'ivy-league', type: 'hair', name: 'Ivy League', category: 'Kort (tot ca. 3 cm)', image: 'images/ivy-league.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'military-cut', type: 'hair', name: 'Military Cut', category: 'Kort (tot ca. 3 cm)', image: 'images/military-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'short-textured-crop', type: 'hair', name: 'Short Textured Crop', category: 'Kort (tot ca. 3 cm)', image: 'images/short-textured-crop.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'textured-fringe', type: 'hair', name: 'Textured Fringe', category: 'Kort (tot ca. 3 cm)', image: 'images/textured-fringe.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'taper-cut', type: 'hair', name: 'Taper Cut', category: 'Kort (tot ca. 3 cm)', image: 'images/taper-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Middellang (3–8 cm)
-                { id: 'curtain-mullet', type: 'hair', name: 'Curtain Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Curtain+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'curly-mullet', type: 'hair', name: 'Curly Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Curly+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'faux-hawk', type: 'hair', name: 'Faux Hawk', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Faux+Hawk', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'medium-mullet', type: 'hair', name: 'Medium Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Medium+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'modern-mullet', type: 'hair', name: 'Modern Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Modern+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'pompadour', type: 'hair', name: 'Pompadour', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Pompadour', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'quiff', type: 'hair', name: 'Quiff', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Quiff', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'side-part', type: 'hair', name: 'Side Part', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Side+Part', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'short-mullet', type: 'hair', name: 'Short Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Short+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'slick-back', type: 'hair', name: 'Slick Back', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Slick+Back', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'textured-quiff', type: 'hair', name: 'Textured Quiff', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Textured+Quiff', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'textured-shag', type: 'hair', name: 'Textured Shag', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Textured+Shag', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'wavy-mullet', type: 'hair', name: 'Wavy Mullet', category: 'Middellang (3–8 cm)', image: 'https://placehold.co/200x150/cccccc/333333?text=Wavy+Mullet', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'curtain-mullet', type: 'hair', name: 'Curtain Mullet', category: 'Middellang (3–8 cm)', image: 'images/curtain-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'curly-mullet', type: 'hair', name: 'Curly Mullet', category: 'Middellang (3–8 cm)', image: 'images/curly-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'faux-hawk', type: 'hair', name: 'Faux Hawk', category: 'Middellang (3–8 cm)', image: 'images/faux-hawk.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'medium-mullet', type: 'hair', name: 'Medium Mullet', category: 'Middellang (3–8 cm)', image: 'images/medium-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'modern-mullet', type: 'hair', name: 'Modern Mullet', category: 'Middellang (3–8 cm)', image: 'images/modern-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'pompadour', type: 'hair', name: 'Pompadour', category: 'Middellang (3–8 cm)', image: 'images/pompadour.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'quiff', type: 'hair', name: 'Quiff', category: 'Middellang (3–8 cm)', image: 'images/quiff.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'side-part', type: 'hair', name: 'Side Part', category: 'Middellang (3–8 cm)', image: 'images/side-part.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'short-mullet', type: 'hair', name: 'Short Mullet', category: 'Middellang (3–8 cm)', image: 'images/short-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'slick-back', type: 'hair', name: 'Slick Back', category: 'Middellang (3–8 cm)', image: 'images/slick-back.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'textured-quiff', type: 'hair', name: 'Textured Quiff', category: 'Middellang (3–8 cm)', image: 'images/textured-quiff.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'textured-shag', type: 'hair', name: 'Textured Shag', category: 'Middellang (3–8 cm)', image: 'images/textured-shag.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'wavy-mullet', type: 'hair', name: 'Wavy Mullet', category: 'Middellang (3–8 cm)', image: 'images/wavy-mullet.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Lang (8 cm en langer)
-                { id: 'beehive-fade', type: 'hair', name: 'Beehive Fade', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Beehive+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'butterfly-cut', type: 'hair', name: 'Butterfly Cut', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Butterfly+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'layered-long-cut', type: 'hair', name: 'Layered Long Cut', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Layered+Long', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'man-bun', type: 'hair', name: 'Man Bun', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Man+Bun', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'ponytail', type: 'hair', name: 'Ponytail', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Ponytail', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'slicked-back-long-hair', type: 'hair', name: 'Slicked-Back Long Hair', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Slicked+Back', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'top-knot', type: 'hair', name: 'Top Knot', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Top+Knot', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'v-cut', type: 'hair', name: 'V-Cut', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=V-Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'waterfall-cut', type: 'hair', name: 'Waterfall Cut', category: 'Lang (8 cm en langer)', image: 'https://placehold.co/200x150/cccccc/333333?text=Waterfall+Cut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'beehive-fade', type: 'hair', name: 'Beehive Fade', category: 'Lang (8 cm en langer)', image: 'images/beehive-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'butterfly-cut', type: 'hair', name: 'Butterfly Cut', category: 'Lang (8 cm en langer)', image: 'images/butterfly-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'layered-long-cut', type: 'hair', name: 'Layered Long Cut', category: 'Lang (8 cm en langer)', image: 'images/layered-long-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'man-bun', type: 'hair', name: 'Man Bun', category: 'Lang (8 cm en langer)', image: 'images/man-bun.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'ponytail', type: 'hair', name: 'Ponytail', category: 'Lang (8 cm en langer)', image: 'images/ponytail.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'slicked-back-long-hair', type: 'hair', name: 'Slicked-Back Long Hair', category: 'Lang (8 cm en langer)', image: 'images/slicked-back-long-hair.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'top-knot', type: 'hair', name: 'Top Knot', category: 'Lang (8 cm en langer)', image: 'images/top-knot.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'v-cut', type: 'hair', name: 'V-Cut', category: 'Lang (8 cm en langer)', image: 'images/v-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'waterfall-cut', type: 'hair', name: 'Waterfall Cut', category: 'Lang (8 cm en langer)', image: 'images/waterfall-cut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Fade- en undercut-varianten
-                { id: 'disconnected-undercut', type: 'hair', name: 'Disconnected Undercut', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Disconnected', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'drop-fade', type: 'hair', name: 'Drop Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Drop+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'hard-part', type: 'hair', name: 'Hard Part', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Hard+Part', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'high-fade', type: 'hair', name: 'High Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=High+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'low-fade', type: 'hair', name: 'Low Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Low+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'mid-fade', type: 'hair', name: 'Mid Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Mid+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'skin-fade', type: 'hair', name: 'Skin Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Skin+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'temple-fade', type: 'hair', name: 'Temple Fade', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Temple+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'undercut', type: 'hair', name: 'Undercut', category: 'Fade- en undercut-varianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Undercut', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'disconnected-undercut', type: 'hair', name: 'Disconnected Undercut', category: 'Fade- en undercut-varianten', image: 'images/disconnected-undercut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'drop-fade', type: 'hair', name: 'Drop Fade', category: 'Fade- en undercut-varianten', image: 'images/drop-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'hard-part', type: 'hair', name: 'Hard Part', category: 'Fade- en undercut-varianten', image: 'images/hard-part.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'high-fade', type: 'hair', name: 'High Fade', category: 'Fade- en undercut-varianten', image: 'images/high-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'low-fade', type: 'hair', name: 'Low Fade', category: 'Fade- en undercut-varianten', image: 'images/low-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'mid-fade', type: 'hair', name: 'Mid Fade', category: 'Fade- en undercut-varianten', image: 'images/mid-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'skin-fade', type: 'hair', name: 'Skin Fade', category: 'Fade- en undercut-varianten', image: 'images/skin-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'temple-fade', type: 'hair', name: 'Temple Fade', category: 'Fade- en undercut-varianten', image: 'images/temple-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'undercut', type: 'hair', name: 'Undercut', category: 'Fade- en undercut-varianten', image: 'images/undercut.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Alternatieve en textuurstijlen
-                { id: 'afro', type: 'hair', name: 'Afro', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Afro', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'braids', type: 'hair', name: 'Braids (bijv. cornrows)', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Braids', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'crochet-braids', type: 'hair', name: 'Crochet Braids', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Crochet+Braids', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'dreadlocks', type: 'hair', name: 'Dreadlocks', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Dreadlocks', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'mohawk', type: 'hair', name: 'Mohawk', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Mohawk', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'rat-tail', type: 'hair', name: 'Rat Tail', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Rat+Tail', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'sheep-shear', type: 'hair', name: 'Sheep Shear', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Sheep+Shear', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'twists', type: 'hair', name: 'Twists', category: 'Alternatieve en textuurstijlen', image: 'https://placehold.co/200x150/cccccc/333333?text=Twists', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'afro', type: 'hair', name: 'Afro', category: 'Alternatieve en textuurstijlen', image: 'images/afro.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'braids', type: 'hair', name: 'Braids (bijv. cornrows)', category: 'Alternatieve en textuurstijlen', image: 'images/braids.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'crochet-braids', type: 'hair', name: 'Crochet Braids', category: 'Alternatieve en textuurstijlen', image: 'images/crochet-braids.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'dreadlocks', type: 'hair', name: 'Dreadlocks', category: 'Alternatieve en textuurstijlen', image: 'images/dreadlocks.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'mohawk', type: 'hair', name: 'Mohawk', category: 'Alternatieve en textuurstijlen', image: 'images/mohawk.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'rat-tail', type: 'hair', name: 'Rat Tail', category: 'Alternatieve en textuurstijlen', image: 'images/rat-tail.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'sheep-shear', type: 'hair', name: 'Sheep Shear', category: 'Alternatieve en textuurstijlen', image: 'images/sheep-shear.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'twists', type: 'hair', name: 'Twists', category: 'Alternatieve en textuurstijlen', image: 'images/twists.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                  // Styling- en textuurtechnieken
-                { id: 'bed-head', type: 'hair', name: 'Bed Head', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Bed+Head', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'feathered-layers', type: 'hair', name: 'Feathered Layers', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Feathered', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'messy-spikes', type: 'hair', name: 'Messy Spikes', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Messy+Spikes', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'piecey-layers', type: 'hair', name: 'Piecey Layers', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Piecey+Layers', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'pompadour-fade', type: 'hair', name: 'Pompadour Fade', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Pomp+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'quiff-fade', type: 'hair', name: 'Quiff Fade', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Quiff+Fade', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'structured-crop', type: 'hair', name: 'Structured Crop', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Structured', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'tousled-waves', type: 'hair', name: 'Tousled Waves', category: 'Styling- en textuurtechnieken', image: 'https://placehold.co/200x150/cccccc/333333?text=Tousled+Waves', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'bed-head', type: 'hair', name: 'Bed Head', category: 'Styling- en textuurtechnieken', image: 'images/bed-head.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'feathered-layers', type: 'hair', name: 'Feathered Layers', category: 'Styling- en textuurtechnieken', image: 'images/feathered-layers.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'messy-spikes', type: 'hair', name: 'Messy Spikes', category: 'Styling- en textuurtechnieken', image: 'images/messy-spikes.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'piecey-layers', type: 'hair', name: 'Piecey Layers', category: 'Styling- en textuurtechnieken', image: 'images/piecey-layers.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'pompadour-fade', type: 'hair', name: 'Pompadour Fade', category: 'Styling- en textuurtechnieken', image: 'images/pompadour-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'quiff-fade', type: 'hair', name: 'Quiff Fade', category: 'Styling- en textuurtechnieken', image: 'images/quiff-fade.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'structured-crop', type: 'hair', name: 'Structured Crop', category: 'Styling- en textuurtechnieken', image: 'images/structured-crop.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'tousled-waves', type: 'hair', name: 'Tousled Waves', category: 'Styling- en textuurtechnieken', image: 'images/tousled-waves.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
             ],
             beardstyles: [
                 // Kort / stoppel
-                { id: '5-oclock-shadow', type: 'beard', name: '5 o’clock Shadow', category: 'Kort / stoppel', image: 'https://placehold.co/200x150/cccccc/333333?text=5+o-clock', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'stubble', type: 'beard', name: 'Stoppelbaard (2–5 mm)', category: 'Kort / stoppel', image: 'https://placehold.co/200x150/cccccc/333333?text=Stubble', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: '5-oclock-shadow', type: 'beard', name: '5 o’clock Shadow', category: 'Kort / stoppel', image: 'images/5-oclock-shadow.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'stubble', type: 'beard', name: 'Stoppelbaard (2–5 mm)', category: 'Kort / stoppel', image: 'images/stubble.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Medium lengte
-                { id: 'full-goatee', type: 'beard', name: 'Full Goatee', category: 'Medium lengte', image: 'https://placehold.co/200x150/cccccc/333333?text=Full+Goatee', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'van-dyke', type: 'beard', name: 'Van Dyke', category: 'Medium lengte', image: 'https://placehold.co/200x150/cccccc/333333?text=Van+Dyke', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'circle-beard', type: 'beard', name: 'Circle Beard', category: 'Medium lengte', image: 'https://placehold.co/200x150/cccccc/333333?text=Circle+Beard', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'moustache-soul-patch', type: 'beard', name: 'Moustache and Soul Patch', category: 'Medium lengte', image: 'https://placehold.co/200x150/cccccc/333333?text=Moustache', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'full-goatee', type: 'beard', name: 'Full Goatee', category: 'Medium lengte', image: 'images/full-goatee.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'van-dyke', type: 'beard', name: 'Van Dyke', category: 'Medium lengte', image: 'images/van-dyke.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'circle-beard', type: 'beard', name: 'Circle Beard', category: 'Medium lengte', image: 'images/circle-beard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'moustache-soul-patch', type: 'beard', name: 'Moustache and Soul Patch', category: 'Medium lengte', image: 'images/moustache-soul-patch.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Volle baard
-                { id: 'garibaldi', type: 'beard', name: 'Garibaldi', category: 'Volle baard', image: 'https://placehold.co/200x150/cccccc/333333?text=Garibaldi', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'short-boxed-beard', type: 'beard', name: 'Short Boxed Beard', category: 'Volle baard', image: 'https://placehold.co/200x150/cccccc/333333?text=Boxed+Beard', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'verzorgde-volle-baard', type: 'beard', name: 'Verzorgde volle baard', category: 'Volle baard', image: 'https://placehold.co/200x150/cccccc/333333?text=Full+Beard', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'yeard', type: 'beard', name: 'Yeard', category: 'Volle baard', image: 'https://placehold.co/200x150/cccccc/333333?text=Yeard', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'garibaldi', type: 'beard', name: 'Garibaldi', category: 'Volle baard', image: 'images/garibaldi.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'short-boxed-beard', type: 'beard', name: 'Short Boxed Beard', category: 'Volle baard', image: 'images/short-boxed-beard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'verzorgde-volle-baard', type: 'beard', name: 'Verzorgde volle baard', category: 'Volle baard', image: 'images/verzorgde-volle-baard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'yeard', type: 'beard', name: 'Yeard', category: 'Volle baard', image: 'images/yeard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Lang en uitgesproken
-                { id: 'ducktail-beard', type: 'beard', name: 'Ducktail Beard', category: 'Lang en uitgesproken', image: 'https://placehold.co/200x150/cccccc/333333?text=Ducktail', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'verzorgde-lange-baard', type: 'beard', name: 'Verzorgde lange baard', category: 'Lang en uitgesproken', image: 'https://placehold.co/200x150/cccccc/333333?text=Long+Beard', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'viking-stijl-baard', type: 'beard', name: 'Viking-stijl baard', category: 'Lang en uitgesproken', image: 'https://placehold.co/200x150/cccccc/333333?text=Viking', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'ziegenbart', type: 'beard', name: 'Ziegenbart', category: 'Lang en uitgesproken', image: 'https://placehold.co/200x150/cccccc/333333?text=Ziegenbart', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'ducktail-beard', type: 'beard', name: 'Ducktail Beard', category: 'Lang en uitgesproken', image: 'images/ducktail-beard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'verzorgde-lange-baard', type: 'beard', name: 'Verzorgde lange baard', category: 'Lang en uitgesproken', image: 'images/verzorgde-lange-baard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'viking-stijl-baard', type: 'beard', name: 'Viking-stijl baard', category: 'Lang en uitgesproken', image: 'images/viking-stijl-baard.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'ziegenbart', type: 'beard', name: 'Ziegenbart', category: 'Lang en uitgesproken', image: 'images/ziegenbart.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
                 // Snorvarianten
-                { id: 'chevron', type: 'beard', name: 'Chevron', category: 'Snorvarianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Chevron', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'handlebar', type: 'beard', name: 'Handlebar', category: 'Snorvarianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Handlebar', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'pencil', type: 'beard', name: 'Pencil', category: 'Snorvarianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Pencil', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'horseshoe', type: 'beard', name: 'Horseshoe', category: 'Snorvarianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Horseshoe', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
-                { id: 'dali', type: 'beard', name: 'Dali', category: 'Snorvarianten', image: 'https://placehold.co/200x150/cccccc/333333?text=Dali', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'chevron', type: 'beard', name: 'Chevron', category: 'Snorvarianten', image: 'images/chevron.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'handlebar', type: 'beard', name: 'Handlebar', category: 'Snorvarianten', image: 'images/handlebar.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'pencil', type: 'beard', name: 'Pencil', category: 'Snorvarianten', image: 'images/pencil.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'horseshoe', type: 'beard', name: 'Horseshoe', category: 'Snorvarianten', image: 'images/horseshoe.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
+                { id: 'dali', type: 'beard', name: 'Dali', category: 'Snorvarianten', image: 'images/dali.jpg', instructions: 'Instructies voor deze stijl worden binnenkort toegevoegd.' },
             ],
             hairProducts: { title: "Haarproducten", content: "<h3>Pomade</h3><p>Perfect voor glanzende, strakke looks zoals de Pompadour. Biedt een sterke hold.</p><h3>Clay</h3><p>Geeft een matte finish en veel textuur. Ideaal voor rommelige, getextureerde kapsels.</p><h3>Wax</h3><p>Voor een flexibele hold en een lichte glans. Goed voor kortere stijlen die je gedurende de dag wilt kunnen restylen.</p>" },
             beardProducts: { title: "Baardproducten", content: "<h3>Baardolie</h3><p>Hydrateert de baardharen en de huid eronder. Voorkomt jeuk en roos.</p><h3>Baardbalsem</h3><p>Biedt een lichte hold om de baard in model te brengen en bevat voedende ingrediënten zoals baardolie.</p><h3>Baardshampoo</h3><p>Speciaal ontworpen om de baard te reinigen zonder de natuurlijke oliën te strippen.</p>" },
@@ -217,9 +225,9 @@
         const navButtons = document.querySelectorAll('.nav-btn');
 
         // --- STATE ---
-        let db, auth, userId = null, currentStyle = null, currentMode = 'hair';
+        let db, auth, userId = null, currentStyle = null, currentMode = 'chooser';
         let userVotes = new Set(), voteCounts = {};
-        let unsubscribeVotes = null; // To store the listener unsubscribe function
+        let unsubscribeVotes = null;
 
         // --- INITIALISATIE ---
         async function init() {
@@ -232,10 +240,10 @@
                 listenForVotes();
                 sidebar.addEventListener('click', handleSidebarClick);
                 mainContent.addEventListener('click', handleMainContentClick);
-                switchMode('hair');
+                switchMode('chooser'); // Start op de stijlkiezer
             } catch (e) {
                 console.error("Firebase initialisatie mislukt:", e);
-                mainContent.innerHTML = '<div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8"><p class="text-red-500 text-center">Kon geen verbinding maken met de database.</p></div>';
+                mainContent.innerHTML = '<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8"><p class="text-red-600 text-center">Kon geen verbinding maken met de database. Controleer de Firebase configuratie.</p></div>';
             }
         }
 
@@ -269,7 +277,7 @@
         }
 
         function listenForVotes() {
-            if (unsubscribeVotes) unsubscribeVotes(); // Unsubscribe from previous listener if it exists
+            if (unsubscribeVotes) unsubscribeVotes();
             const votesRef = collection(db, `artifacts/${appId}/public/data/votes`);
             unsubscribeVotes = onSnapshot(votesRef, (snapshot) => {
                 const newVoteCounts = {};
@@ -302,14 +310,7 @@
         function switchMode(mode, styleIdToShow = null) {
             currentMode = mode;
             navButtons.forEach(btn => {
-                const btnMode = btn.id.replace('nav-', '');
-                if (btnMode === 'hair' && mode === 'hair') { // Adjust for new nav button text
-                    btn.classList.add('active');
-                    btn.classList.remove('text-blue-200');
-                } else {
-                    btn.classList.toggle('active', btnMode === mode);
-                    btn.classList.toggle('text-blue-200', btnMode !== mode);
-                }
+                btn.classList.toggle('active', btn.id === `nav-${mode}`);
             });
 
             sidebar.style.display = 'block';
@@ -352,7 +353,7 @@
             for (const categoryName in categories) {
                 const categoryHeader = document.createElement('h3');
                 categoryHeader.textContent = categoryName;
-                categoryHeader.className = 'text-md font-semibold text-gray-500 mt-4 px-4';
+                categoryHeader.className = 'text-lg font-semibold text-gray-500 mt-6 px-4 border-b border-gray-200 pb-2';
                 sidebar.appendChild(categoryHeader);
                 categories[categoryName].forEach(style => {
                     const button = createStyleButton(style);
@@ -365,8 +366,8 @@
         }
         
         function renderWelcomeMessage() {
-             mainContent.innerHTML = `<div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 text-center">
-                <h1 class="text-3xl font-bold text-gray-900 mb-4">Welkom bij de Style Wiki</h1>
+             mainContent.innerHTML = `<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8 text-center">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Welkom bij de Style Guide</h1>
                 <p class="text-gray-600">Kies een stijl uit de lijst om de details te zien.</p>
             </div>`;
         }
@@ -374,25 +375,30 @@
         function renderStyleDetails(style) {
             currentStyle = style;
             const instructionsTitle = style.type === 'hair' ? 'Instructies voor de kapper:' : 'Instructies voor het trimmen:';
-            const baseImage = style.type === 'hair' ? 'https://placehold.co/256x256/EFEFEF/333333?text=Hoofd' : 'https://placehold.co/256x256/EFEFEF/333333?text=Gezicht';
+            const baseImage = 'https://placehold.co/256x256/E5E7EB/4B5563?text=Gezicht';
             
             mainContent.innerHTML = `
-            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8">
-                <div class="flex justify-center items-center text-center mb-6">
-                    <h1 id="style-name" class="text-3xl md:text-4xl font-bold text-gray-900">${style.name}</h1>
-                    <span id="fire-icon-main" class="fire-icon ml-3 text-3xl">🔥</span>
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
+                <div class="text-center mb-6">
+                    <h1 id="style-name" class="text-4xl md:text-5xl font-bold text-gray-900">${style.name}</h1>
                 </div>
-                <div class="relative w-64 h-64 mx-auto mb-6 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                    <img src="${baseImage}" alt="Basis" class="w-full h-full object-cover">
-                    <img id="style-image" src="${style.image}" alt="${style.name}" class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-auto opacity-0 transition-opacity duration-500">
-                </div>
-                <div id="vote-section" class="text-center mb-6">
-                    <button id="vote-btn" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Stem op deze stijl</button>
-                    <p class="text-lg font-semibold mt-3">Aantal stemmen: <span id="vote-count">0</span></p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-700">${instructionsTitle}</h3>
-                    <p class="text-gray-600 leading-relaxed">${style.instructions}</p>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="relative w-full aspect-square mx-auto rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
+                            <img src="${baseImage}" alt="Basis" class="w-full h-full object-cover">
+                            <img id="style-image" src="${style.image || 'https://placehold.co/200x200/F3F4F6/9CA3AF?text=N/A'}" alt="${style.name}" class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                        </div>
+                        <div id="vote-section" class="text-center mt-4">
+                            <button id="vote-btn" class="vote-btn w-full font-bold py-2 px-6 rounded-lg transition duration-300">Stem op deze stijl</button>
+                            <p class="text-lg font-semibold mt-3 text-gray-700">Aantal stemmen: <span id="vote-count">0</span> <span id="fire-icon-main" class="fire-icon ml-1">🔥</span></p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <article>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">${instructionsTitle}</h3>
+                            <p class="text-gray-600 leading-relaxed">${style.instructions || 'Geen instructies beschikbaar.'}</p>
+                        </article>
+                    </div>
                 </div>
             </div>`;
             
@@ -410,33 +416,33 @@
 
         function renderInfoPage({title, content}) {
             mainContent.innerHTML = `
-            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8">
-                <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">${title}</h1>
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">${title}</h1>
                 <div class="prose max-w-none">${content}</div>
             </div>`;
         }
 
         function renderStyleChooser() {
             mainContent.innerHTML = `
-            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8">
-                <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">AI Stijlkiezer</h1>
-                <p class="text-center text-gray-600 mb-6">Voer je gezichtsvorm en haartype in en onze AI geeft je een persoonlijk advies voor een kapsel.</p>
-                <form id="chooser-form" class="space-y-4">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">AI Stijlkiezer</h1>
+                <p class="text-center text-gray-600 mb-8">Niet zeker waar je moet beginnen? Beantwoord de vragen en onze AI geeft je een persoonlijk advies.</p>
+                <form id="chooser-form" class="space-y-6">
                     <div>
-                        <label for="face-shape" class="block text-sm font-medium text-gray-700">Gezichtsvorm</label>
-                        <select id="face-shape" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <label for="face-shape" class="block text-sm font-medium text-gray-700 mb-1">Wat is je gezichtsvorm?</label>
+                        <select id="face-shape" class="w-full py-2 px-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800">
                             <option>Ovaal</option><option>Rond</option><option>Vierkant</option><option>Langwerpig</option><option>Hartvormig</option><option>Diamant</option>
                         </select>
                     </div>
                     <div>
-                        <label for="hair-type" class="block text-sm font-medium text-gray-700">Haartype</label>
-                        <select id="hair-type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <label for="hair-type" class="block text-sm font-medium text-gray-700 mb-1">Wat is je haartype?</label>
+                        <select id="hair-type" class="w-full py-2 px-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800">
                             <option>Steil</option><option>Golvend</option><option>Krullend</option><option>Kroes</option>
                         </select>
                     </div>
                     <div>
-                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                            Krijg advies
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                            Krijg Advies
                         </button>
                     </div>
                 </form>
@@ -448,11 +454,11 @@
         function createStyleButton(style) {
             const voteCount = voteCounts[style.id] || 0;
             const button = document.createElement('button');
-            button.innerHTML = `<span class="flex-grow">${style.name}</span>
+            button.innerHTML = `<span class="flex-grow text-left">${style.name}</span>
                                 <span class="fire-icon ${voteCount >= VOTING_THRESHOLD ? 'visible' : ''} mr-2">🔥</span>
-                                <span class="text-sm font-normal">${voteCount}</span>`;
+                                <span class="text-sm font-bold text-gray-500">${voteCount}</span>`;
             button.dataset.id = style.id;
-            button.className = 'sidebar-btn w-full text-left px-4 py-2 rounded-md transition-colors duration-200 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center';
+            button.className = 'sidebar-btn w-full px-4 py-3 rounded-md transition-colors duration-200 flex items-center text-gray-800 hover:bg-gray-100';
             return button;
         }
 
@@ -473,7 +479,7 @@
                 if (voteSection && !voteSection.querySelector('.error-msg')) {
                     const errorMsg = document.createElement('p');
                     errorMsg.textContent = 'Stemmen mislukt. Probeer het later opnieuw.';
-                    errorMsg.className = 'error-msg text-red-500 text-sm mt-1';
+                    errorMsg.className = 'error-msg text-red-600 text-sm mt-1';
                     voteSection.appendChild(errorMsg);
                 }
             }
@@ -484,7 +490,7 @@
             const faceShape = document.getElementById('face-shape').value;
             const hairType = document.getElementById('hair-type').value;
             const resultDiv = document.getElementById('ai-result');
-            resultDiv.innerHTML = '<div class="loader"></div><p class="text-center">Advies wordt gegenereerd...</p>';
+            resultDiv.innerHTML = '<div class="loader"></div><p class="text-center text-gray-600">Advies wordt gegenereerd...</p>';
 
             const availableStyles = data.hairstyles.map(s => `- ${s.name} (id: ${s.id})`).join('\n');
             const prompt = `Geef een advies voor een mannenkapsel voor iemand met een ${faceShape} gezicht en ${hairType} haar. Geef 2 concrete suggesties uit de onderstaande lijst. Leg per suggestie uit waarom het goed past. Formatteer de naam van de voorgestelde stijl als een span-element met class "ai-suggestion" en een data-style-id attribuut met de bijbehorende id. Bijvoorbeeld: <span class="ai-suggestion" data-style-id="pompadour">Pompadour</span>. Geef het antwoord in het Nederlands, opgemaakt in nette HTML met kopjes en alinea's.\n\nBeschikbare stijlen:\n${availableStyles}`;
@@ -512,7 +518,7 @@
                 }
             } catch (error) {
                 console.error("Fout bij AI-verzoek:", error);
-                resultDiv.innerHTML = `<p class="text-red-500 text-center">Er is iets misgegaan. Probeer het later opnieuw.</p>`;
+                resultDiv.innerHTML = `<p class="text-red-600 text-center">Er is iets misgegaan. Probeer het later opnieuw.</p>`;
             }
         }
         
